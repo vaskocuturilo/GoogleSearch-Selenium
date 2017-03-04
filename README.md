@@ -1,8 +1,6 @@
 # GoogleSearch
 Test GoogleSearch
 
-**mvn clean test**
-
 Test Case:
 
 1. Go to the website http://google.com/ncr
@@ -20,3 +18,5 @@ they are not taken into account (Wikipedia widget, the widget "Top stories", etc
 6. return to the "All" tab
 
 7. It is expected that the first result still leads to the same page as in step 3.
+
+**mvn clean test**
