@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.googlesearch.util.DriverMaster.ImagesPage;
 import static org.googlesearch.util.DriverMaster.MainField;
-import static org.googlesearch.util.DriverMaster.LinkGoogleMenu;
+import static org.googlesearch.util.DriverMaster.LinkAll;
 
 
 public class SearchGoogle {
@@ -27,7 +27,7 @@ public class SearchGoogle {
     }
 
     public ResultSearch search() {
-        driver.findElement(By.linkText(LinkGoogleMenu)).click();
+        driver.findElement(By.linkText(LinkAll)).click();
         return new ResultSearch(driver);
     }
 

@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
        public static final String ImageName = "i48MSmX01sE18M:";
        public static final String FirstImage = "//*[@class='irc_ho' and contains(text(),'www.seleniumhq.org')]";
        public static final String MainField = "lst-ib";
-       public static final String LinkGoogleMenu = "All";
+       public static final String LinkAll = "All";
        public static final String ImagesPage = ".//*[@id='hdtb-msb']//a[text()='Images']";
        private static final String HTTP_GOOGLE_COM_NCR = "http://google.com/ncr";
        protected WebDriver driver;
