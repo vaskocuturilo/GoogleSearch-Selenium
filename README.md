@@ -1,6 +1,7 @@
 # GoogleSearch
 Test GoogleSearch
 
+**mvn clean test**
 
 Test Case:
 
