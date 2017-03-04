@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
    public class DriverMaster {
        protected static final String SEARCH_TEXT = "selenium";
        protected static final String VALIDATE_TEXT = "www.seleniumhq.org";
-       public static final String FirstLink = ".//*[@id='rso']//cite[1]";
+       public static final String  FirstLink = ".//*[@id='rso']//cite[1]";
        public static final String ImageName = "i48MSmX01sE18M:";
        public static final String FirstImage = "//*[@class='irc_ho' and contains(text(),'www.seleniumhq.org')]";
        public static final String NameSearch = "gsfi";
