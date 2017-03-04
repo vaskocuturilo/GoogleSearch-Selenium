@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static org.googlesearch.util.DriverMaster.ImagesPage;
-import static org.googlesearch.util.DriverMaster.NameSearch;
-import static org.googlesearch.util.DriverMaster.cssSelectorGoogleMenu;
+import static org.googlesearch.util.DriverMaster.MainField;
+import static org.googlesearch.util.DriverMaster.LinkGoogleMenu;
 
 
 public class SearchGoogle {
@@ -16,18 +16,18 @@ public class SearchGoogle {
         this.driver =driver;
     }
     public ResultSearch search(String text) {
-        driver.findElement(By.className(NameSearch)).sendKeys(text +"\n");
+        driver.findElement(By.id(MainField)).sendKeys(text +"\n");
         return new ResultSearch(driver);
     }
 
     public ResultSearch searchImage() {
         driver.findElement(By.xpath(ImagesPage)).click();
-        driver.findElement(By.className(NameSearch)).click();
+        driver.findElement(By.id(MainField)).click();
         return new ResultSearch(driver);
     }
 
     public ResultSearch search() {
-        driver.findElement(By.cssSelector(cssSelectorGoogleMenu)).click();
+        driver.findElement(By.linkText(LinkGoogleMenu)).click();
         return new ResultSearch(driver);
     }
 
