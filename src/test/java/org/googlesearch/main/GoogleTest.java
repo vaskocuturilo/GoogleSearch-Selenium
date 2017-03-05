@@ -1,8 +1,8 @@
 package org.googlesearch.main;
 
-import org.googlesearch.util.DriverMaster;
-import org.googlesearch.util.ResultSearch;
-import org.googlesearch.util.SearchGoogle;
+import org.googlesearch.utils.DriverMaster;
+import org.googlesearch.utils.ResultSearch;
+import org.googlesearch.utils.SearchGoogle;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;

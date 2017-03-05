@@ -1,11 +1,9 @@
-package org.googlesearch.util;
+package org.googlesearch.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static org.googlesearch.util.DriverMaster.ImagesPage;
-import static org.googlesearch.util.DriverMaster.MainField;
-import static org.googlesearch.util.DriverMaster.LinkAll;
+import static org.googlesearch.utils.DriverMaster.*;
 
 
 public class SearchGoogle {
@@ -21,7 +19,7 @@ public class SearchGoogle {
     }
 
     public ResultSearch searchImage() {
-        driver.findElement(By.xpath(ImagesPage)).click();
+        driver.findElement(By.linkText(LinkImages)).click();
         driver.findElement(By.id(MainField)).click();
         return new ResultSearch(driver);
     }

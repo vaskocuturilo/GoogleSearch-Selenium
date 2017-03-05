@@ -1,11 +1,11 @@
-package org.googlesearch.util;
+package org.googlesearch.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static org.googlesearch.util.DriverMaster.FirstImage;
-import static org.googlesearch.util.DriverMaster.FirstLink;
-import static org.googlesearch.util.DriverMaster.ImageName;
+import static org.googlesearch.utils.DriverMaster.FirstImage;
+import static org.googlesearch.utils.DriverMaster.FirstLink;
+import static org.googlesearch.utils.DriverMaster.ImageName;
 
 public class ResultSearch {
     private final WebDriver driver;
