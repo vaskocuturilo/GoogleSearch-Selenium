@@ -15,7 +15,6 @@ import static org.openqa.selenium.remote.BrowserType.IE;
 
 
 public class DriverMaster {
-
     public static final String ImageName = "i48MSmX01sE18M:";
     public static final String  FirstLink = "//*[@class='_Rm' and contains(text(),'www.seleniumhq.org')]";
     public static final String FirstImage = "//*[@class='irc_ho' and contains(text(),'www.seleniumhq.org')]";
@@ -32,7 +31,6 @@ public class DriverMaster {
             String classpath = DriverMaster.class.getProtectionDomain().getCodeSource().getLocation().getPath();
             classpath = classpath.replaceAll("/target/classes/", "");
             classpath = classpath.substring(1);
-
             switch (getProperties("Browser")) {
                 case FIREFOX:
                    System.setProperty(geckoDriver, classpath + "/src/main/resources/geckodriver.exe");
@@ -54,7 +52,6 @@ public class DriverMaster {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
             driver.get(getProperties("GOOGLE_URL"));
-
         }
     }
 

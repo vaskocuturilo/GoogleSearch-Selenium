@@ -28,5 +28,4 @@ public class SearchGoogle {
         driver.findElement(By.linkText(LinkAll)).click();
         return new ResultSearch(driver);
     }
-
 }

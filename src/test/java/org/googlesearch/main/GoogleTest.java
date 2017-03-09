@@ -28,9 +28,7 @@ public class GoogleTest extends DriverMaster {
 
         allLinksOnMainPage = googlePage.search();
         assertTrue(allLinksOnMainPage.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
-
     }
-
 }
 
 
