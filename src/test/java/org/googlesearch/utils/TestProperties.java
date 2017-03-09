@@ -1,20 +1,22 @@
 package org.googlesearch.utils;
 
+import org.googlesearch.main.GoogleTest;
+
 import java.io.*;
 import java.util.Properties;
 
 public class TestProperties {
 
-
     protected final static Properties prop = new Properties();
+    private static String PROP_FILE = "testdata.properties";
 
-    public static String getProperty(String key) {
+    public static String getProperties(String key) {
 
         return prop.getProperty(key);
     }
 
     public static void readPropertiesFromFile() throws IOException {
-        InputStream inputStream = DriverMaster.class.getClassLoader().getResourceAsStream("testdata.properties");
+        InputStream inputStream = GoogleTest.class.getClassLoader().getResourceAsStream(PROP_FILE);
         try {
             Reader reader = new InputStreamReader(inputStream, "UTF-8");
             try {
