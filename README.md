@@ -19,4 +19,10 @@ they are not taken into account (Wikipedia widget, the widget "Top stories", etc
 
 7. It is expected that the first result still leads to the same page as in step 3.
 
+Download geckodriver for your system on the link https://www.dropbox.com/s/a0j361de57lqb5w/Drivers.zip?dl=0
+
+Extract geckodriver to the resources folder
+
+After this :
+
 **mvn clean test**
