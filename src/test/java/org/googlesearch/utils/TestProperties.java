@@ -5,7 +5,10 @@ import org.googlesearch.main.GoogleTest;
 import java.io.*;
 import java.util.Properties;
 
+import static org.googlesearch.utils.DriverMaster.PROP_FILE;
+
 public class TestProperties {
+
 
     private final static Properties prop = new Properties();
 
@@ -15,7 +18,6 @@ public class TestProperties {
     }
 
     public static void readPropertiesFromFile() throws IOException {
-        String PROP_FILE = "testdata.properties";
         try (InputStream inputStream = GoogleTest.class.getClassLoader().getResourceAsStream(PROP_FILE)) {
             Reader reader = new InputStreamReader(inputStream, "UTF-8");
             try {

@@ -14,16 +14,13 @@ public class GoogleTest extends DriverMaster {
 
     @Test
     public void GoogleSearch() throws Exception {
-        SearchGoogle googlePage, imagesGooglePage;
-        ResultSearch allLinksOnMainPage, allImagesOnImagePage;
 
-        googlePage = new SearchGoogle(driver);
-        imagesGooglePage = new SearchGoogle(driver);
-
-        allLinksOnMainPage = googlePage.search(getProperties("SEARCH_TEXT"));
+        SearchGoogle googlePage = new SearchGoogle(driver);
+        ResultSearch allLinksOnMainPage = googlePage.search(getProperties("SEARCH_TEXT"));
         assertTrue(allLinksOnMainPage.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
 
-        allImagesOnImagePage = imagesGooglePage.searchImage();
+        SearchGoogle imagesGooglePage = new SearchGoogle(driver);
+        ResultSearch allImagesOnImagePage = imagesGooglePage.searchImage();
         assertTrue(allImagesOnImagePage.getFirstImage().contains(getProperties("VALIDATE_TEXT")));
 
         allLinksOnMainPage = googlePage.search();
