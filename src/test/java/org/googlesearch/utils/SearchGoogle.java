@@ -11,10 +11,11 @@ public class SearchGoogle {
 
     public SearchGoogle(WebDriver driver) {
 
-        this.driver =driver;
+        this.driver = driver;
     }
+
     public ResultSearch search(String text) {
-        driver.findElement(By.id(MainField)).sendKeys(text +"\n");
+        driver.findElement(By.id(MainField)).sendKeys(text + "\n");
         return new ResultSearch(driver);
     }
 
