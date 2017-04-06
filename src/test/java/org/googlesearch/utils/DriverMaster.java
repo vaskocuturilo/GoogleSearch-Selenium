@@ -28,7 +28,7 @@ public class DriverMaster {
     private static final String geckoDriver = "webdriver.gecko.driver";
 
     @Before
-    public void Init () throws IOException {
+    public void Init() throws IOException {
             readPropertiesFromFile();
             String classpath = DriverMaster.class.getProtectionDomain().getCodeSource().getLocation().getPath();
             classpath = classpath.replaceAll("/target/classes/", "");
@@ -53,11 +53,11 @@ public class DriverMaster {
             }
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
+            driver.get(getProperties("GOOGLE_URL"));
         }
 
-
     @After
-    public void tearDown() {
+    public void tearDown() throws Exception {
         if (driver != null) {
             driver.quit();
         }

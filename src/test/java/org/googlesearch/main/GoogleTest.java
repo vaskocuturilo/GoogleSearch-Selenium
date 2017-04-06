@@ -17,15 +17,15 @@ public class GoogleTest extends DriverMaster {
         driver.get(getProperties("GOOGLE_URL"));
 
         SearchGoogle google = new SearchGoogle(driver);
-        ResultSearch allLinksOnMainPage = google.doSearch(getProperties("SEARCH_TEXT"));
-        assertTrue(allLinksOnMainPage.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
+        ResultSearch resultSearch = google.doSearch(getProperties("SEARCH_TEXT"));
+        assertTrue(resultSearch.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
 
         SearchGoogle imagesGooglePage = new SearchGoogle(driver);
-        ResultSearch allImagesOnImagePage = imagesGooglePage.doSearchImage();
-        assertTrue(allImagesOnImagePage.getFirstImage().contains(getProperties("VALIDATE_TEXT")));
+        ResultSearch searchImage = imagesGooglePage.doSearchImage();
+        assertTrue(searchImage.getFirstImage().contains(getProperties("VALIDATE_TEXT")));
 
-        ResultSearch allLinksOnMain = google.doSearch();
-        assertTrue(allLinksOnMain.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
+        ResultSearch search = google.doSearch();
+        assertTrue(search.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
     }
 }
 
