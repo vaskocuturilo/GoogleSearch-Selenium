@@ -12,17 +12,17 @@ import static org.junit.Assert.assertTrue;
 public class GoogleTest extends DriverMaster {
 
     @Test
-    public void GoogleSearch() throws Exception {
+    public void search() throws InterruptedException {
 
-        SearchGoogle googlePage = new SearchGoogle(driver);
-        ResultSearch allLinksOnMainPage = googlePage.search(getProperties("SEARCH_TEXT"));
+        SearchGoogle google = new SearchGoogle(driver);
+        ResultSearch allLinksOnMainPage = google.doSearch(getProperties("SEARCH_TEXT"));
         assertTrue(allLinksOnMainPage.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
 
         SearchGoogle imagesGooglePage = new SearchGoogle(driver);
-        ResultSearch allImagesOnImagePage = imagesGooglePage.searchImage();
+        ResultSearch allImagesOnImagePage = imagesGooglePage.doSearchImage();
         assertTrue(allImagesOnImagePage.getFirstImage().contains(getProperties("VALIDATE_TEXT")));
 
-        ResultSearch allLinksOnMain = googlePage.search();
+        ResultSearch allLinksOnMain = google.doSearch();
         assertTrue(allLinksOnMain.getFirstLink().contains(getProperties("VALIDATE_TEXT")));
     }
 }
