@@ -14,6 +14,8 @@ public class GoogleTest extends DriverMaster {
     @Test
     public void search() throws InterruptedException {
 
+        driver.get(getProperties("GOOGLE_URL"));
+
         SearchGoogle google = new SearchGoogle(driver);
         ResultSearch allLinksOnMainPage = google.doSearch(getProperties("SEARCH_TEXT"));
         assertTrue(allLinksOnMainPage.getFirstLink().contains(getProperties("VALIDATE_TEXT")));

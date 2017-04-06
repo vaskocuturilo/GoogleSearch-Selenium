@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import static org.googlesearch.utils.TestProperties.getProperties;
@@ -27,8 +28,7 @@ public class DriverMaster {
     private static final String geckoDriver = "webdriver.gecko.driver";
 
     @Before
-    public void SetUp() throws Exception {
-        if (driver == null) {
+    public void Init () throws IOException {
             readPropertiesFromFile();
             String classpath = DriverMaster.class.getProtectionDomain().getCodeSource().getLocation().getPath();
             classpath = classpath.replaceAll("/target/classes/", "");
@@ -53,12 +53,11 @@ public class DriverMaster {
             }
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
-            driver.get(getProperties("GOOGLE_URL"));
         }
-    }
+
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
