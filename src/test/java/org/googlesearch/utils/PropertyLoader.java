@@ -3,15 +3,9 @@ package org.googlesearch.utils;
 import java.io.IOException;
 import java.util.Properties;
 
-/*
- * Class that extracts properties from the prop file.
- *
- * @author Sebastiano Armeli-Battana
- */
+import static org.googlesearch.utils.DriverMaster.PROP_FILE;
+
 public class PropertyLoader {
-
-    private static final String PROP_FILE = "/testdata.properties";
-
     public static String loadProperty(String name) {
         Properties props = new Properties();
         try {
