@@ -11,20 +11,21 @@ public class SearchGoogle {
 
     public SearchGoogle(WebDriver driver) {
 
-        this.driver =driver;
+        this.driver = driver;
     }
-    public ResultSearch search(String text) {
-        driver.findElement(By.id(MainField)).sendKeys(text +"\n");
+
+    public ResultSearch doSearch(String text) {
+        driver.findElement(By.id(MainField)).sendKeys(text + "\n");
         return new ResultSearch(driver);
     }
 
-    public ResultSearch searchImage() {
+    public ResultSearch doSearchImage() {
         driver.findElement(By.linkText(LinkImages)).click();
         driver.findElement(By.id(MainField)).click();
         return new ResultSearch(driver);
     }
 
-    public ResultSearch search() {
+    public ResultSearch doSearch() {
         driver.findElement(By.linkText(LinkAll)).click();
         return new ResultSearch(driver);
     }

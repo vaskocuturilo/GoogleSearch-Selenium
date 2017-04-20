@@ -9,6 +9,7 @@ import static org.googlesearch.utils.DriverMaster.ImageName;
 
 public class ResultSearch {
     private final WebDriver driver;
+
     public ResultSearch(WebDriver driver) {
 
         this.driver = driver;
