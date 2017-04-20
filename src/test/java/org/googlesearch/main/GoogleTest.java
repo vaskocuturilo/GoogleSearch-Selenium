@@ -18,13 +18,13 @@ public class GoogleTest extends DriverMaster {
         SearchGoogle googlePage = new SearchGoogle(driver);
         SearchGoogle imagesGooglePage = new SearchGoogle(driver);
 
-        ResultSearch allLinksOnMainPage = googlePage.search(loadProperty("SEARCH_TEXT"));
+        ResultSearch allLinksOnMainPage = googlePage.doSearch(loadProperty("SEARCH_TEXT"));
         assertTrue(allLinksOnMainPage.getFirstLink().contains(loadProperty("VALIDATE_TEXT")));
 
-        ResultSearch allImagesOnImagePage = imagesGooglePage.searchImage();
+        ResultSearch allImagesOnImagePage = imagesGooglePage.doSearchImage();
         assertTrue(allImagesOnImagePage.getFirstImage().contains(loadProperty("VALIDATE_TEXT")));
 
-        allLinksOnMainPage = googlePage.search();
+        allLinksOnMainPage = googlePage.doSearch();
         assertTrue(allLinksOnMainPage.getFirstLink().contains(loadProperty("VALIDATE_TEXT")));
     }
 }
